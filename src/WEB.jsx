@@ -379,7 +379,7 @@ export default function DevDashboard() {
         </button>
       </div>
 
-      <div style={{ display: "flex", maxWidth: 1200, margin: "0 auto", padding: "16px 16px 32px" }}>
+      <div style={{ display: "flex", width: "100%", maxWidth: 1600, margin: "0 auto", padding: "16px 24px 32px" }}>
         
         {/* ── Left Nav ── */}
         <Sidebar 

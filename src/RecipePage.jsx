@@ -51,7 +51,7 @@ const RECIPES = [
     desc: "Classic Thai dessert featuring sweet glutinous rice, fresh ripe mangoes, and rich coconut cream.",
     badge: "25",
     color: "#F2A93B",
-    image: "https://images.unsplash.com/photo-1605197135804-03d360098df4?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.pexels.com/photos/5409015/pexels-photo-5409015.jpeg?auto=compress&cs=tinysrgb&w=600",
     ingredients: [
       { name: "Glutinous Rice", amount: "300g" },
       { name: "Coconut Milk", amount: "400ml" },
@@ -79,7 +79,7 @@ const RECIPES = [
     desc: "A vibrant, spicy, and tangy Thai salad made with sweet corn kernels, tomatoes, and a punchy dressing.",
     badge: "15",
     color: "#E85D04",
-    image: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?q=80&w=600&auto=format&fit=crop",
+    image: "https://hungryinthailand.com/thai-corn-salad/",
     ingredients: [
       { name: "Sweet Corn", amount: "2 ears" },
       { name: "Cherry Tomatoes", amount: "100g" },
@@ -96,6 +96,93 @@ const RECIPES = [
       "Serve immediately for best crunch."
     ]
   },
+  {
+    id: "r4",
+    name: "PAD THAI",
+    time: "15 mins",
+    servings: 2,
+    cals: "400 kcal",
+    difficulty: "Medium",
+    chef: "Arnon S.",
+    rating: 4.8,
+    reviews: 520,
+    desc: "Stir-fried rice noodles with eggs, peanuts, bean sprouts, and a sweet-savory tamarind sauce.",
+    badge: "30",
+    color: "#E28743",
+    image: "https://images.unsplash.com/photo-1559314809-0d155014e29e?q=80&w=600&auto=format&fit=crop",
+    ingredients: [
+      { name: "Rice Noodles", amount: "200g" },
+      { name: "Shrimp", amount: "150g" },
+      { name: "Tamarind Paste", amount: "2 tbsp" },
+      { name: "Palm Sugar & Fish Sauce", amount: "2 tbsp each" },
+      { name: "Peanuts & Bean Sprouts", amount: "Handful" },
+    ],
+    steps: [
+      "Soak noodles until pliable.",
+      "Stir-fry shrimp until cooked, then push to the side.",
+      "Scramble an egg in the pan, add noodles and sauce.",
+      "Toss everything together until well combined.",
+      "Garnish with crushed peanuts and bean sprouts."
+    ]
+  },
+  {
+    id: "r5",
+    name: "TOM YUM GOONG",
+    time: "30 mins",
+    servings: 4,
+    cals: "250 kcal",
+    difficulty: "Medium",
+    chef: "Nittaya W.",
+    rating: 4.9,
+    reviews: 890,
+    desc: "A hot and sour Thai soup cooked with shrimp, mushrooms, and fragrant herbs like lemongrass and galangal.",
+    badge: "20",
+    color: "#C62828",
+    image: "https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/04/24/5608757681874e1ea5df1aa41d5b2e3d_How_To_Make_Tom_Yam_Kung_The_Epitome_Of_Delicious_And_Nutritious_Thai_Cuisine3.jpg",
+    ingredients: [
+      { name: "Large Shrimp", amount: "300g" },
+      { name: "Lemongrass & Galangal", amount: "A few slices" },
+      { name: "Kaffir Lime Leaves", amount: "5 leaves" },
+      { name: "Mushrooms", amount: "100g" },
+      { name: "Chili Paste (Nam Prik Pao)", amount: "2 tbsp" },
+    ],
+    steps: [
+      "Bring water or broth to a boil with lemongrass, galangal, and lime leaves.",
+      "Add mushrooms and chili paste.",
+      "Add shrimp and cook until just pink.",
+      "Turn off heat, stir in lime juice and fish sauce.",
+      "Serve hot with jasmine rice."
+    ]
+  },
+  {
+    id: "r6",
+    name: "GREEN CURRY",
+    time: "40 mins",
+    servings: 4,
+    cals: "520 kcal",
+    difficulty: "Hard",
+    chef: "Panya T.",
+    rating: 4.7,
+    reviews: 410,
+    desc: "A rich and fragrant Thai curry made with green chilies, coconut milk, chicken, and Thai eggplants.",
+    badge: "40",
+    color: "#2E7D32",
+    image: "https://images.unsplash.com/photo-1548946526-f69ebe3bc5ee?q=80&w=600&auto=format&fit=crop",
+    ingredients: [
+      { name: "Chicken Breast", amount: "400g" },
+      { name: "Green Curry Paste", amount: "3 tbsp" },
+      { name: "Coconut Milk", amount: "500ml" },
+      { name: "Thai Eggplants", amount: "4 pcs" },
+      { name: "Sweet Basil", amount: "1 cup" },
+    ],
+    steps: [
+      "Fry the green curry paste in a little coconut cream until fragrant.",
+      "Add chicken and cook until the outside is sealed.",
+      "Pour in the rest of the coconut milk and bring to a simmer.",
+      "Add eggplants and cook until tender.",
+      "Stir in fresh basil just before serving."
+    ]
+  }
 ];
 
 /* ── Inline CSS for 3D flip card and layout ── */
@@ -260,8 +347,8 @@ function RecipeCard({ recipe }) {
                 textAlign: "left"
               }}
             >
-              <h3 style={{ 
-                fontFamily: F.display, fontWeight: 700, fontSize: 18, 
+              <h3 style={{
+                fontFamily: F.display, fontWeight: 700, fontSize: 18,
                 margin: "0 0 6px", letterSpacing: "0.5px",
                 textShadow: "0 2px 4px rgba(0,0,0,0.4)"
               }}>
@@ -277,8 +364,8 @@ function RecipeCard({ recipe }) {
                   </span>
                 </div>
                 {/* Flip indicator */}
-                <div style={{ 
-                  display: "flex", alignItems: "center", gap: 4, 
+                <div style={{
+                  display: "flex", alignItems: "center", gap: 4,
                   background: "rgba(255,255,255,0.25)", padding: "4px 8px", borderRadius: 12,
                   backdropFilter: "blur(4px)", fontSize: 10, fontWeight: 600,
                   transform: hovered ? "translateX(0)" : "translateX(4px)",
@@ -291,130 +378,130 @@ function RecipeCard({ recipe }) {
             </div>
           </div>
 
-        {/* BACK FACE */}
-        <div className="flip-card-back">
-          {/* Card Back Header */}
-          <div style={{
-            padding: "16px 16px 10px",
-            borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            background: "rgba(0,0,0,0.01)"
-          }}>
-            <div style={{ textAlign: "left" }}>
-              <h3 style={{ 
-                fontFamily: F.display, fontWeight: 700, fontSize: 13, 
-                color: recipe.color, margin: 0, letterSpacing: "0.3px" 
-              }}>
-                {recipe.name}
-              </h3>
-              <div style={{ display: "flex", gap: 8, fontSize: 10, color: "#718096", marginTop: 2, fontFamily: F.body }}>
-                <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <Clock size={10} /> {recipe.time}
-                </span>
-                <span>•</span>
-                <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                  <Users size={10} /> {recipe.servings} servings
-                </span>
+          {/* BACK FACE */}
+          <div className="flip-card-back">
+            {/* Card Back Header */}
+            <div style={{
+              padding: "16px 16px 10px",
+              borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              background: "rgba(0,0,0,0.01)"
+            }}>
+              <div style={{ textAlign: "left" }}>
+                <h3 style={{
+                  fontFamily: F.display, fontWeight: 700, fontSize: 13,
+                  color: recipe.color, margin: 0, letterSpacing: "0.3px"
+                }}>
+                  {recipe.name}
+                </h3>
+                <div style={{ display: "flex", gap: 8, fontSize: 10, color: "#718096", marginTop: 2, fontFamily: F.body }}>
+                  <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
+                    <Clock size={10} /> {recipe.time}
+                  </span>
+                  <span>•</span>
+                  <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
+                    <Users size={10} /> {recipe.servings} servings
+                  </span>
+                </div>
+              </div>
+
+              <button
+                onClick={handleFlip}
+                style={{
+                  background: "rgba(0,0,0,0.04)",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "#4A5568",
+                  padding: 6,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "background 0.2s"
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.08)"}
+                onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0.04)"}
+                title="ย้อนกลับด้านหน้า"
+              >
+                <RotateCcw size={12} />
+              </button>
+            </div>
+
+            {/* Scrollable Recipe Details */}
+            <div className="recipe-back-scroll" style={{ textAlign: "left" }}>
+              {/* Description */}
+              <p style={{ fontSize: 11, color: "#4A5568", lineHeight: 1.4, margin: "0 0 12px 0", fontFamily: F.body, fontStyle: "italic" }}>
+                "{recipe.desc}"
+              </p>
+
+              {/* Ingredients */}
+              <div style={{ marginBottom: 14 }}>
+                <h4 style={{
+                  fontSize: 10, fontFamily: F.display, fontWeight: 700,
+                  color: "#1A202C", textTransform: "uppercase", letterSpacing: "0.5px",
+                  marginBottom: 6, borderLeft: "2px solid " + recipe.color, paddingLeft: 6
+                }}>
+                  Ingredients
+                </h4>
+                <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                  {recipe.ingredients.map((ing, i) => (
+                    <div key={i} style={{ display: "flex", justifyContent: "space-between", fontSize: 10.5, color: "#4A5568", fontFamily: F.body }}>
+                      <span style={{ fontWeight: 500 }}>• {ing.name}</span>
+                      <span style={{ color: recipe.color, fontWeight: 600 }}>{ing.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Instructions */}
+              <div>
+                <h4 style={{
+                  fontSize: 10, fontFamily: F.display, fontWeight: 700,
+                  color: "#1A202C", textTransform: "uppercase", letterSpacing: "0.5px",
+                  marginBottom: 6, borderLeft: "2px solid " + recipe.color, paddingLeft: 6
+                }}>
+                  Instructions
+                </h4>
+                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                  {recipe.steps.map((step, i) => (
+                    <div key={i} style={{ display: "flex", gap: 6, alignItems: "flex-start", fontSize: 10.5, color: "#4A5568", lineHeight: 1.4, fontFamily: F.body }}>
+                      <span style={{
+                        width: 14, height: 14, borderRadius: "50%",
+                        background: recipe.color + "18",
+                        color: recipe.color,
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        fontSize: 8.5, fontWeight: 700, flexShrink: 0, marginTop: 2
+                      }}>
+                        {i + 1}
+                      </span>
+                      <span>{step}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <button
-              onClick={handleFlip}
-              style={{
-                background: "rgba(0,0,0,0.04)",
-                border: "none",
-                cursor: "pointer",
-                color: "#4A5568",
-                padding: 6,
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                transition: "background 0.2s"
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,0.08)"}
-              onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0.04)"}
-              title="ย้อนกลับด้านหน้า"
-            >
-              <RotateCcw size={12} />
-            </button>
-          </div>
-
-          {/* Scrollable Recipe Details */}
-          <div className="recipe-back-scroll" style={{ textAlign: "left" }}>
-            {/* Description */}
-            <p style={{ fontSize: 11, color: "#4A5568", lineHeight: 1.4, margin: "0 0 12px 0", fontFamily: F.body, fontStyle: "italic" }}>
-              "{recipe.desc}"
-            </p>
-
-            {/* Ingredients */}
-            <div style={{ marginBottom: 14 }}>
-              <h4 style={{
-                fontSize: 10, fontFamily: F.display, fontWeight: 700,
-                color: "#1A202C", textTransform: "uppercase", letterSpacing: "0.5px",
-                marginBottom: 6, borderLeft: "2px solid " + recipe.color, paddingLeft: 6
-              }}>
-                Ingredients
-              </h4>
-              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                {recipe.ingredients.map((ing, i) => (
-                  <div key={i} style={{ display: "flex", justifyContent: "space-between", fontSize: 10.5, color: "#4A5568", fontFamily: F.body }}>
-                    <span style={{ fontWeight: 500 }}>• {ing.name}</span>
-                    <span style={{ color: recipe.color, fontWeight: 600 }}>{ing.amount}</span>
-                  </div>
-                ))}
-              </div>
+            {/* Card Back Footer */}
+            <div style={{
+              padding: "8px 16px",
+              borderTop: "1px solid rgba(0,0,0,0.06)",
+              fontSize: 9.5,
+              fontFamily: F.body,
+              color: "#718096",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              background: "rgba(0,0,0,0.01)"
+            }}>
+              <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
+                <ChefHat size={10} /> {recipe.chef}
+              </span>
+              <span style={{ display: "flex", alignItems: "center", gap: 2, color: recipe.color, fontWeight: 600 }}>
+                ★ {recipe.rating}
+              </span>
             </div>
-
-            {/* Instructions */}
-            <div>
-              <h4 style={{
-                fontSize: 10, fontFamily: F.display, fontWeight: 700,
-                color: "#1A202C", textTransform: "uppercase", letterSpacing: "0.5px",
-                marginBottom: 6, borderLeft: "2px solid " + recipe.color, paddingLeft: 6
-              }}>
-                Instructions
-              </h4>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                {recipe.steps.map((step, i) => (
-                  <div key={i} style={{ display: "flex", gap: 6, alignItems: "flex-start", fontSize: 10.5, color: "#4A5568", lineHeight: 1.4, fontFamily: F.body }}>
-                    <span style={{
-                      width: 14, height: 14, borderRadius: "50%",
-                      background: recipe.color + "18",
-                      color: recipe.color,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: 8.5, fontWeight: 700, flexShrink: 0, marginTop: 2
-                    }}>
-                      {i + 1}
-                    </span>
-                    <span>{step}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Card Back Footer */}
-          <div style={{
-            padding: "8px 16px",
-            borderTop: "1px solid rgba(0,0,0,0.06)",
-            fontSize: 9.5,
-            fontFamily: F.body,
-            color: "#718096",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            background: "rgba(0,0,0,0.01)"
-          }}>
-            <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
-              <ChefHat size={10} /> {recipe.chef}
-            </span>
-            <span style={{ display: "flex", alignItems: "center", gap: 2, color: recipe.color, fontWeight: 600 }}>
-              ★ {recipe.rating}
-            </span>
-          </div>
           </div>
         </div>
       </div>
@@ -445,15 +532,15 @@ function DecorativeVectors() {
 function RecipeHeader() {
   return (
     <div style={{ position: "relative", zIndex: 10, marginBottom: 30 }}>
-      <h2 style={{ 
-        fontFamily: F.display, fontWeight: 400, fontSize: 32, 
+      <h2 style={{
+        fontFamily: F.display, fontWeight: 400, fontSize: 32,
         color: "#D32F2F", margin: 0, letterSpacing: "1px",
         textTransform: "uppercase"
       }}>
         RECOMMENDED
       </h2>
-      <h1 style={{ 
-        fontFamily: F.cursive, fontSize: 48, 
+      <h1 style={{
+        fontFamily: F.cursive, fontSize: 48,
         color: "#D32F2F", margin: "-10px 0 0 0",
         transform: "rotate(-2deg)",
         display: "inline-block"
