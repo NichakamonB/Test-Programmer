@@ -51,7 +51,7 @@ const RECIPES = [
     desc: "Classic Thai dessert featuring sweet glutinous rice, fresh ripe mangoes, and rich coconut cream.",
     badge: "25",
     color: "#F2A93B",
-    image: "https://images.pexels.com/photos/5409015/pexels-photo-5409015.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJS3LS6oA3u20A8l2SfWUubsSUzfEOoMz-rqKoXbbDU6HtNnJH_0OATKkk&s=10",
     ingredients: [
       { name: "Glutinous Rice", amount: "300g" },
       { name: "Coconut Milk", amount: "400ml" },
@@ -79,7 +79,7 @@ const RECIPES = [
     desc: "A vibrant, spicy, and tangy Thai salad made with sweet corn kernels, tomatoes, and a punchy dressing.",
     badge: "15",
     color: "#E85D04",
-    image: "https://hungryinthailand.com/thai-corn-salad/",
+    image: "https://hungryinthailand.com/wp-content/uploads/2023/07/Thai-corn-salad.webp",
     ingredients: [
       { name: "Sweet Corn", amount: "2 ears" },
       { name: "Cherry Tomatoes", amount: "100g" },
